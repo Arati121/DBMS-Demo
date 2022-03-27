@@ -71,3 +71,25 @@ select c.collectorid,s.saledate,s.salesprice from collectors c inner join sales 
 select s.salesprice,s.saledate,c.collectorid,p.name from collectors c inner join sales s on s.collectorid=c.collectorid inner join paintings p on s.paintingid=p.paintingid
 
 
+select *From emp
+create table maganer
+(id int,
+name varchar(50)
+);
+select*From Manager;
+
+select e.ename as employee,m.manageid as manager from emp e,emp m where e.manageid=m.eid;
+
+create table study
+(
+studid int,
+courseid varchar(50),
+year int
+);
+
+select*From study;
+insert into study values(1,'NET',2016);
+insert into study values(2,'java',2017);
+insert into study values(1,'react',2017);
+--self join
+select s1.studid,s2.courseid from study s1,study s2 where s1.studid=s2.courseid AND s1.courseid<>s2.courseid;
