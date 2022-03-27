@@ -55,8 +55,19 @@ insert into sales values(1005,'2022-3-16',17,3,103,50)
 
 
 
-
 --write a query to list the paintings that are priced higher than avg
 select * from  paintings where price>(select avg(price) as average from paintings);
 
 --find the list of collectors who purchased the painting from our gallery.
+
+--inner join
+select *from collectors;
+select *from sales;
+select *From paintings;
+--inner join sales and collector table-display match recordes
+select c.collectorid,s.saledate,s.salesprice from collectors c inner join sales s on s.collectorid=c.collectorid;
+
+--inner join sales and collector table,painting-display match recordes
+select s.salesprice,s.saledate,c.collectorid,p.name from collectors c inner join sales s on s.collectorid=c.collectorid inner join paintings p on s.paintingid=p.paintingid
+
+
