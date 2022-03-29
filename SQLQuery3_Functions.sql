@@ -154,3 +154,5 @@ select city,state from supplier union select city,state from managers
 
 --unionall
 select city,state from managers union all select city,state from supplier
+
+select city,state from managers union all select city,state from supplier order by city
